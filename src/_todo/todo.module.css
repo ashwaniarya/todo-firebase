@@ -1,0 +1,128 @@
+.todoActionContainer {
+  display: flex;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.addTaskButton {
+  margin-left: 3rem;
+}
+
+@media (max-width: 840px ) {
+  .todoActionContainer {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .addTaskButton {
+    margin-left: 0.5rem;
+    padding: 0.8rem 0.8rem;
+  }
+}
+.todoActionContainer > div {
+  flex: 1
+}
+
+.todoContainer {
+}
+
+.todoItem { 
+  margin-bottom: 1.4rem;
+}
+.todoSection > :first-child{
+  margin-bottom: 1.4rem;
+}
+
+.todoCreateHeaderText {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+.todoCreateContainer {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  max-width: 50wh;
+}
+.todoCreateHeader {
+  padding: 2rem 2rem;
+  border-bottom: 0.05rem solid #D7D7D7;
+}
+
+.todoCreateBody {
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.todoCreateInput {
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  margin-top: 0.5rem;
+}
+
+.inputControl {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBottomLabel {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.inputLabelWarning {
+  color: red;
+}
+
+.inputLabelInfo {
+  color: #949393;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.noTodoTextContainer{
+  margin-top: 4rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+}
+
+.noTodoText {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  margin:0.5rem;
+}
+
+.hamburgurButton {
+  padding: 0.8rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.submitBtnContaier{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: flex;
+    max-height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+.loader > svg{
+  max-height: 50vh;
+}
