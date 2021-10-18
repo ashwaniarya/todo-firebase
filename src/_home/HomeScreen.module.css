@@ -1,0 +1,90 @@
+.rootContainer{
+  flex: 1;
+  display: flex;
+  overflow-y: hidden;
+}
+
+.sideBar {
+  background-color: #DCDCDC;
+  border-radius: 1.5rem;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBarWidth {
+  margin: 1rem;
+  min-width: 320px;
+}
+
+.sideBarActive {
+  transform: translate(0px);
+}
+
+@media (max-width: 640px) {
+  .sideBarWidth {
+    margin: 0;
+    position:absolute;
+    height: 100vh;
+    left: -360px;
+    z-index: 2;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .sideBarActive {
+    transform: translate(360px);
+  }
+}
+
+.mainContainer { 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+.sideBarBody {
+
+}
+
+.sideBarItem {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  text-decoration: none;
+  transition: all ease-in-out 0.3s;
+  color: #000;
+}
+.sideBarItem:hover {
+  background-color: #C4C4C4;
+}
+
+.sideBarItemActive {
+  background-color: #C4C4C4;
+}
+
+.sideBarItem > :nth-child(2) {
+  margin-left: 1rem;
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+
+.sideBarButton {
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+.sideBarBody {
+  flex: 3
+}
+
+.sideBarHeader {
+  flex: 2
+}
+
+.logoContainer {
+  margin-top: 4rem;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+}
