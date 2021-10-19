@@ -6,6 +6,16 @@
   align-items: center;
 }
 
+@media (max-width: 405px){
+  .todoSearchInput {
+    background-color: #F5F5F5;
+    padding: 0em 1em;
+    display: flex;
+    border-radius: 2em;
+    align-items: center;
+  }
+}
+
 .todoSearchInput > input{
   border: none;
   background-color: transparent;
