@@ -1,10 +1,15 @@
 
 :root {
-  --color-black: '#000000';
-  --color-grey4: '#C4C4C4';
-  --color-grey3: '#F5F5F5';
-  --color-grey2: '#DCDCDC';
-  --color-grey1: '#757575';
+  --colorWhite: #fff;
+  --colorRed: red;
+  --colorBlack: #000000;
+  --colorBlackAlpha6: rgba(0, 0, 0, 0.6);
+  --colorGrey4: #C4C4C4;
+  --colorGrey3: #F5F5F5;
+  --colorGrey2: #DCDCDC;
+  --colorGrey1: #757575;
+  --colorGrey5: #D7D7D7;
+  --colorGrey6: #949393;
   --color: #C4C4C4;
   --disabled: #959495;
 }
