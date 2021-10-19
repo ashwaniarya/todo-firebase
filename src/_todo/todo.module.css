@@ -126,3 +126,7 @@
 .loader > svg{
   max-height: 50vh;
 }
+
+.marginTop {
+  margin-top: 8rem;
+}

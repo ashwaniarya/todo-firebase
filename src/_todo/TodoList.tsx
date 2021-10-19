@@ -124,21 +124,47 @@ export default function TodoList({ onClickMenu }:TodoListProps) {
     refetch(undefined, 'passive');
   };
 
+  const renderTodoNotAvailable = (message1:string, message2:string)=>{
+    return <Box className={styles.center}>
+          <INoTodoIllustration />
+          <Box className={styles.noTodoTextContainer}>
+            <Text
+              type="p"
+              className={flattenStyle(["margin-0", styles.noTodoText])}
+            >
+              {message1}
+            </Text>
+            <Text
+              type="p"
+              className={flattenStyle(["margin-0", styles.noTodoText])}
+            >
+              {message2}
+            </Text>
+          </Box>
+          <Button rounded type={"primary"} onClick={onClickAddTaskHandler}>
+            Add&nbsp;Task
+          </Button>
+        </Box>
+  }
+
   const renderTodos = () => {
     if (!fetching) {
       const filteredTodo = applySearchFilter(rowTodoArray, searchQuery);
 
+      console.log(filteredTodo);
       if (!!searchQuery && filteredTodo.length === 0) {
         return <Box>Try using different search input</Box>;
       }
       const sortedTodo = getSortedTodo(filteredTodo, filter);
       console.log(sortedTodo);
+      if(sortedTodo.size === 0 && filteredTodo.length > 0){
+        return <Box className={styles.marginTop}>{renderTodoNotAvailable("You don't have any todo today", 'Create your tasks by clicking on Add tasks')}</Box>
+      }
       const content = [];
       for (var [key, value] of sortedTodo) {
         const date = new Date(key);
         const isToday = todayDate === new Date(date).setHours(0, 0, 0, 0);
         const isYesterday = yesterdayDate === new Date(date).setHours(0, 0, 0, 0);
-        // TODO add yesterday time formatting
 
         const dateToShow = isYesterday? 'Yesterday':isToday
           ? "Today"
@@ -220,26 +246,7 @@ export default function TodoList({ onClickMenu }:TodoListProps) {
         </>
       )}
       {noTodos && !fetching && (
-        <Box className={styles.center}>
-          <INoTodoIllustration />
-          <Box className={styles.noTodoTextContainer}>
-            <Text
-              type="p"
-              className={flattenStyle(["margin-0", styles.noTodoText])}
-            >
-              A good place to keep track of your day to day tasks
-            </Text>
-            <Text
-              type="p"
-              className={flattenStyle(["margin-0", styles.noTodoText])}
-            >
-              Create your tasks by clicking on Add tasks
-            </Text>
-          </Box>
-          <Button rounded type={"primary"} onClick={onClickAddTaskHandler}>
-            Add&nbsp;Task
-          </Button>
-        </Box>
+        renderTodoNotAvailable('A good place to keep track of your day to day tasks','Create your tasks by clicking on Add tasks')
       )}
     </Box>
   );
