@@ -130,3 +130,19 @@
 .marginTop {
   margin-top: 8rem;
 }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.animateText {
+  animation: fadeInOut 0.8s ease-in-out infinite;
+}

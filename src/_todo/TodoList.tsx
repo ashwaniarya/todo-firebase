@@ -68,7 +68,7 @@ function getSortedTodo(data: ITodo[], filter:string) {
 
   let sortedTodo = new Map<string,ITodoWithDateObject[]>(
     arrayToStort.sort((a:[string,ITodoWithDateObject[]], b:[string,ITodoWithDateObject[]]) => {
-      return new Date(a.toString()).getTime() > new Date(b.toString()).getTime() ? -1 : 1;
+      return new Date(a[0]).getTime() > new Date(b[0]).getTime() ? -1 : 1;
     })
   );
 

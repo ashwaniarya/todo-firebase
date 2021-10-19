@@ -11,7 +11,7 @@ export default function TodoCreate({ onCreateCallback = () => {} }) {
   const [taskName, setTaskName] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskDescriptionError, setTaskDescriptionError] = useState<null | string>(null);
-
+  const [loading, setLoading] = useState(false);
   const isSubmitDisabled = !taskName || !taskDescription;
 
   const onChangeTaskNameHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -37,6 +37,9 @@ export default function TodoCreate({ onCreateCallback = () => {} }) {
     };
 
     try {
+      setTaskName('');
+      setTaskDescriptionError('');
+      setLoading(true);
       await TodoService.createTodo(newTodo);
       onCreateCallback();
     } catch (error) {}
@@ -59,11 +62,6 @@ export default function TodoCreate({ onCreateCallback = () => {} }) {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    if(validate()){
-      submitTask()
-    }
-    
   };
 
   return (
@@ -76,7 +74,8 @@ export default function TodoCreate({ onCreateCallback = () => {} }) {
           Add New Task
         </Text>
       </Box>
-      <form onSubmit={onSubmit} className={styles.todoCreateBody}>
+      {!!loading && <Box className={styles.todoCreateBody}><Text type={'h4'} className={flattenStyle(['margin-0',styles.animateText])}>Creating todo ...</Text></Box>}
+      {!loading &&  <form onSubmit={onSubmit} className={styles.todoCreateBody}>
         <Box className={styles.inputControl}>
           <label htmlFor="task-name">Task Name</label>
           <input
@@ -133,7 +132,7 @@ export default function TodoCreate({ onCreateCallback = () => {} }) {
             Add&nbsp;Task
           </Button>
         </Box>
-      </form>
+      </form>}
     </Box>
   );
 }
