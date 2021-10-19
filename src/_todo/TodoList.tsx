@@ -151,12 +151,10 @@ export default function TodoList({ onClickMenu }:TodoListProps) {
     if (!fetching) {
       const filteredTodo = applySearchFilter(rowTodoArray, searchQuery);
 
-      console.log(filteredTodo);
       if (!!searchQuery && filteredTodo.length === 0) {
         return <Box>Try using different search input</Box>;
       }
       const sortedTodo = getSortedTodo(filteredTodo, filter);
-      console.log(sortedTodo);
       if(sortedTodo.size === 0 && filteredTodo.length > 0){
         return <Box className={styles.marginTop}>{renderTodoNotAvailable("You don't have any todo today", 'Create your tasks by clicking on Add tasks')}</Box>
       }
