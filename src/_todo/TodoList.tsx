@@ -38,6 +38,7 @@ function getSortedTodo(data: ITodo[], filter:string) {
       createdAt: item?.createdAt,
       task_name: item?.task_name,
       isDone: item?.isDone,
+      serverKey: item?.serverKey,
       task_description: item?.task_description
     };
 
@@ -150,7 +151,6 @@ export default function TodoList({ onClickMenu }:TodoListProps) {
   const renderTodos = () => {
     if (!fetching) {
       const filteredTodo = applySearchFilter(rowTodoArray, searchQuery);
-
       if (!!searchQuery && filteredTodo.length === 0) {
         return <Box>Try using different search input</Box>;
       }
