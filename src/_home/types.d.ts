@@ -12,6 +12,6 @@ export type ItemProps = {
 
 export interface INavItems {
   to: string,
-  children: ReactNode,
-  className: string
+  children: Function,
+  className: string | string[]
 }

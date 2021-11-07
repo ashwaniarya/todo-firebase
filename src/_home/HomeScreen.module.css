@@ -5,7 +5,7 @@
 }
 
 .sideBar {
-  background-color: #DCDCDC;
+  background-color: var(--colorGrey2);
   border-radius: 1.5rem;
   transition: all ease-in-out 0.3s;
   display: flex;
@@ -53,14 +53,15 @@
   align-items: center;
   text-decoration: none;
   transition: all ease-in-out 0.3s;
-  color: #000;
+  color: var(--colorBlack);
 }
+
 .sideBarItem:hover {
-  background-color: #C4C4C4;
+  background-color: var(--colorPrimary);
 }
 
 .sideBarItemActive {
-  background-color: #C4C4C4;
+  background-color: var(--colorPrimary);
 }
 
 .sideBarItem > :nth-child(2) {

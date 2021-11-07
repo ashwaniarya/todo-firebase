@@ -29,7 +29,7 @@
 }
 
 .todoItem { 
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 .todoSection > :first-child{
   margin-bottom: 1.4rem;
@@ -40,13 +40,13 @@
   line-height: 1.4rem;
 }
 .todoCreateContainer {
-  background-color: #fff;
+  background-color: var(--colorWhite);
   border-radius: 0.5rem;
   max-width: 50wh;
 }
 .todoCreateHeader {
   padding: 2rem 2rem;
-  border-bottom: 0.05rem solid #D7D7D7;
+  border-bottom: 0.05rem solid var(--colorGrey5);
 }
 
 .todoCreateBody {
@@ -55,7 +55,7 @@
   flex-direction: column;
 }
 .todoCreateInput {
-  border: 1px solid #C4C4C4;
+  border: 1px solid var(--colorPrimary);
   box-sizing: border-box;
   border-radius: 8px;
   padding: 0.75rem 1.6rem;
@@ -78,11 +78,11 @@
 }
 
 .inputLabelWarning {
-  color: red;
+  color: var(--colorRed);
 }
 
 .inputLabelInfo {
-  color: #949393;
+  color:  var(--colorGrey6);
 }
 
 .center {

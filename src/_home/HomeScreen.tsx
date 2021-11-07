@@ -19,11 +19,11 @@ export default function HomeScreen() {
   
   const NAV_ITEMS:INavItems[] = [{
     to: '/',
-    children: <><IBoard /><Text type={'p'} className={'margin-0'}>{'All Tasks'}</Text></>,
+    children: (isActive = false)=> <><IBoard /><Text type={'p'} className={flattenStyle(['margin-0 onSurfacePrimaryColor', !isActive ? 'onSurfaceSecondaryColor': ''])}>{'All Tasks'}</Text></>,
     className: styles.sideBarItem
   },{
     to: '/today',
-    children:<><ITimer /><Text type={'p'} className={'margin-0'}>{'Today’s Tasks'}</Text></>,
+    children:(isActive = false)=> <><ITimer /><Text type={'p'} className={flattenStyle(['margin-0 onSurfacePrimaryColor', !isActive ? 'onSurfaceSecondaryColor': ''])}>{'Today’s Tasks'}</Text></>,
     className: styles.sideBarItem
   }]
   const renderSideBarItems = ()=>{
@@ -33,8 +33,9 @@ export default function HomeScreen() {
       let classNames = [item.className];
       if(isActive){
         classNames.push(styles.sideBarItemActive)
+
       }
-      return  <SideBar.Item to={item.to} className={flattenStyle(classNames)}>{item.children}</SideBar.Item>
+      return  <SideBar.Item to={item.to} className={flattenStyle(classNames)}>{item.children?.(isActive)}</SideBar.Item>
     })
   }
 

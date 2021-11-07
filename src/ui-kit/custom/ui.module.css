@@ -15,7 +15,8 @@
 }
 
 .buttonPrimary {
-  background-color: #c4c4c4;
+  background-color: var(--colorPrimary);
+  color: var(--colorOnPrimary)
 }
 
 .buttonRounded {
@@ -26,7 +27,7 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--colorBlackAlpha6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,17 +79,17 @@
   height: 1em;
 }
 .checkbox__input input:focus + .checkbox__control {
-  box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
+  box-shadow: 0 0 0 0.05em var(--colorWhite), 0 0 0.15em 0.1em currentColor;
 }
 .checkbox__input input:checked + .checkbox__control svg {
   transform: scaleX(1.14) translateY(1px) scaleY(1.14);
-  background-color: #c4c4c4;
+  background-color: var(--colorPrimary);
   border-radius: 0.25rem;
   position: relative;
-  color: #757575;
+  color: var(--colorGrey1);
   left: -1px;
   top: 1px;
-  border: 0.1em solid #c4c4c4;
+  border: 0.1em solid var(--colorPrimary);
 }
 .checkbox__input input:disabled + .checkbox__control {
   color: var(--disabled);
