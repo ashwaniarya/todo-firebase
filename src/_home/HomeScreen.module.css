@@ -55,12 +55,13 @@
   transition: all ease-in-out 0.3s;
   color: var(--colorBlack);
 }
+
 .sideBarItem:hover {
-  background-color: var(--colorGrey4);
+  background-color: var(--colorPrimary);
 }
 
 .sideBarItemActive {
-  background-color: var(--colorGrey4);
+  background-color: var(--colorPrimary);
 }
 
 .sideBarItem > :nth-child(2) {

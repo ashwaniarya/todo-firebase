@@ -15,7 +15,8 @@
 }
 
 .buttonPrimary {
-  background-color: var(--colorGrey4);
+  background-color: var(--colorPrimary);
+  color: var(--colorOnPrimary)
 }
 
 .buttonRounded {
@@ -82,13 +83,13 @@
 }
 .checkbox__input input:checked + .checkbox__control svg {
   transform: scaleX(1.14) translateY(1px) scaleY(1.14);
-  background-color: var(--colorGrey4);
+  background-color: var(--colorPrimary);
   border-radius: 0.25rem;
   position: relative;
   color: var(--colorGrey1);
   left: -1px;
   top: 1px;
-  border: 0.1em solid var(--colorGrey4);
+  border: 0.1em solid var(--colorPrimary);
 }
 .checkbox__input input:disabled + .checkbox__control {
   color: var(--disabled);

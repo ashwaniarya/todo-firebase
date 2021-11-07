@@ -10,6 +10,8 @@
   --colorGrey1: #757575;
   --colorGrey5: #D7D7D7;
   --colorGrey6: #949393;
+  --colorPrimary:black;
+  --colorOnPrimary: white;
   --color: #C4C4C4;
   --disabled: #959495;
 }
@@ -37,4 +39,18 @@ code {
 
 .margin-0 {
   margin: 0;
+}
+
+.primaryBgColor {
+  background-color:var(--colorPrimary);
+}
+.primaryColor {
+  color: var(--colorBlack)
+}
+.onSurfacePrimaryColor {
+  color: var(--colorOnPrimary)
+}
+
+.onSurfaceSecondaryColor {
+  color: var(--colorBlack)
 }

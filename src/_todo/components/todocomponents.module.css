@@ -63,7 +63,7 @@
 }
 
 .todoActive {
-  border: 0.13rem solid var(--colorGrey4);
+  border: 0.13rem solid var(--colorPrimary);
 }
 
 .todoDone {
